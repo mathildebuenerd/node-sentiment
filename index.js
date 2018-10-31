@@ -93,7 +93,7 @@ module.exports = function (sPhrase, sLangCode, mCallback) {
 
         let smileyArray;
         while ((smileyArray = regexTextEmojis.exec(sPhrase.toLocaleLowerCase())) !== null) { // convert to lowercase for emojis like :s :S
-            const smileyScore = textEmoji['textemoji'].[smileyArray[0]]; // get the emoji score
+            const smileyScore = textEmoji['textemojis'][smileyArray[0]]; // get the emoji score
             iGlobalScore += Number(smileyScore); // add the score to the global score
 
             // add the smiley into the positive/negative arrays
@@ -133,3 +133,4 @@ module.exports = function (sPhrase, sLangCode, mCallback) {
         mCallback(null, oResult);
     });
 };
+
